@@ -1,7 +1,9 @@
 const {Product} = require('../models/product.model');
 
-module.exports.index = (request,response) => {
-    response.json({product:"jejejeje"});
+module.exports.getAllProducts = (request,response) => {
+    Product.find()
+        .then(productos=>response.json(productos))
+        .catch(err=>response.json(err));
 }
 
 module.exports.createProduct = (request,response) => {
@@ -10,5 +12,11 @@ module.exports.createProduct = (request,response) => {
         title,price,description
     })
         .then(producto=>response.json(producto))
+        .catch(err=>response.json(err));
+}
+
+module.exports.findProductXid = (request,response) => {
+    Product.findById({_id:request.params.id})
+        .then(producto=>response.json({producto:producto}))
         .catch(err=>response.json(err));
 }
