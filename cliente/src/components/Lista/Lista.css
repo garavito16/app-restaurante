@@ -1,0 +1,9 @@
+
+.divItem {
+    display: flex;
+    margin-top: 1.0em;
+}
+
+.titleProducto {
+    width: 200px;
+}

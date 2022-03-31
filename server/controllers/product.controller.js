@@ -20,3 +20,15 @@ module.exports.findProductXid = (request,response) => {
         .then(producto=>response.json({producto:producto}))
         .catch(err=>response.json(err));
 }
+
+module.exports.editProduct = (request,response) => {
+    Product.findOneAndUpdate({_id:request.params.id},request.body,{new:true})
+        .then(producto=>response.json(producto))
+        .catch(err=>response.json(err));
+}
+
+module.exports.deleteProduct = (request,response) => {
+    Product.findOneAndDelete({_id:request.params.id}) 
+        .then(confirmation=>response.json(confirmation))
+        .catch(err=>response.json(err));
+}

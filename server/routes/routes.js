@@ -5,4 +5,6 @@ module.exports = function(app) {
     app.get('/product/getAll',ProductController.getAllProducts);
     app.post('/product/new',ProductController.createProduct);
     app.get('/product/:id',ProductController.findProductXid);
+    app.put('/product/:id',ProductController.editProduct);
+    app.delete('/product/:id',ProductController.deleteProduct);
 }

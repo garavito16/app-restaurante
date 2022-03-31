@@ -1,0 +1,16 @@
+
+.cuadro {
+    border: 1px solid black;
+    width: 400px;
+    padding: 1.0em;
+}
+
+.botones {
+    width: 400px;
+    text-align: center;
+    margin-top: 1.0em;
+}
+
+.botones > div {
+    margin-bottom: 1.0em;
+}
